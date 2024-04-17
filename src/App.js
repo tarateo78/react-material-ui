@@ -7,7 +7,7 @@ import Home from "./Home";
 
 function App() {
   return (
-    <BrowserRouter basename="/react-material-ui">
+    <BrowserRouter basename="/biagiometro">
       <div className="App">
         <ButtonAppBar />
         {/* <Navbar /> */}

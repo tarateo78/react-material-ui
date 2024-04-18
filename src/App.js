@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import Navbar from "./Navbar";
 import Nav from "./Nav";
 import Home from "./components/Home";
-import Create from "./components/Create";
+import Aggiungi from "./components/Aggiungi";
 import About from "./components/About";
 
 import HomeIcon from "@mui/icons-material/Home";
@@ -13,7 +13,7 @@ import AddBoxIcon from "@mui/icons-material/AddBox";
 function App() {
   const pages = [
     { name: "Home", pageURL: "/", icon: <HomeIcon /> },
-    { name: "Create", pageURL: "create", icon: <AddBoxIcon /> },
+    { name: "Aggiungi", pageURL: "aggiungi", icon: <AddBoxIcon /> },
     { name: "About", pageURL: "about", icon: <InfoIcon /> },
   ];
 
@@ -25,7 +25,7 @@ function App() {
         <div className="content">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/create" element={<Create />} />
+            <Route path="/aggiungi" element={<Aggiungi />} />
             <Route path="/about" element={<About />} />
             {/* <Route path="/timbratura/:id" element={<DettaglioTimbratura />} /> */}
           </Routes>

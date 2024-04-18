@@ -42,10 +42,10 @@ export default function TabellaTimbrature({ dati, title }) {
                   },
                 }}
               >
-                <TableCell align="right" scope="row">
+                <TableCell align="center" scope="row">
                   {row.data}
                 </TableCell>
-                <TableCell align="right">{row.ora}</TableCell>
+                <TableCell align="center">{row.ora}</TableCell>
                 <TableCell align="center">{row.causale}</TableCell>
                 <TableCell align="center">{"X"}</TableCell>
               </TableRow>

@@ -34,6 +34,7 @@ const TemporaryDrawer = (props) => {
       <List>
         {pages.map((page) => (
           <Link
+            key={page.name}
             to={page.pageURL}
             style={{ textDecoration: "none", color: "black" }}
           >

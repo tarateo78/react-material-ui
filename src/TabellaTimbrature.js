@@ -12,9 +12,6 @@ export default function TabellaTimbrature({ dati, title }) {
   console.log(dati);
   return (
     <>
-      <Typography variant="h5" align="center" sx={{ marginTop: 9 }}>
-        {title}
-      </Typography>
       <TableContainer component={Paper}>
         <Table aria-label="simple table">
           <TableHead>

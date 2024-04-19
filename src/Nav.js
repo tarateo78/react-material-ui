@@ -1,17 +1,14 @@
 import * as React from "react";
-import { useState, MouseEvent } from "react";
 import { Link } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Menu from "@mui/material/Menu";
+
 import MenuItem from "@mui/material/MenuItem";
-import MenuList from "@mui/material/MenuList";
 import Toolbar from "@mui/material/Toolbar";
 
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
 import AvTimerIcon from "@mui/icons-material/AvTimer";
 
 import TemporaryDrawer from "./MenuDrawer";
@@ -23,7 +20,7 @@ const Nav = (prop) => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar>
           <Box
             sx={{
@@ -52,6 +49,7 @@ const Nav = (prop) => {
           >
             {pages.map((page) => (
               <Link
+                key={page.name}
                 to={page.pageURL}
                 style={{ textDecoration: "none", color: "white" }}
               >

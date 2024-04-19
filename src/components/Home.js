@@ -4,6 +4,7 @@ import AddIcon from "@mui/icons-material/Add";
 import TabellaTimbrature from "../TabellaTimbrature";
 import useFetch from "../useFetch";
 import { Link } from "react-router-dom";
+import { Typography } from "@mui/material";
 
 const handleCreate = () => {
   console.log("create");
@@ -17,7 +18,18 @@ const Home = () => {
     <div className="home">
       {error && <div>{error}</div>}
       {isPending && <div>Loading...</div>}
-      {dati && <TabellaTimbrature dati={dati.records} title="Timbrature" />}
+      {dati && (
+        <>
+          <Typography
+            variant="h5"
+            align="center"
+            sx={{ marginTop: 9, marginBottom: 2 }}
+          >
+            {"Timbrature"}
+          </Typography>
+          <TabellaTimbrature dati={dati.records} />
+        </>
+      )}
       {/* {dati && (
         <ListaTimbrature
           dati={dati.records}

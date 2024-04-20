@@ -6,11 +6,8 @@ import useFetch from "../useFetch";
 import { Link } from "react-router-dom";
 import { Typography } from "@mui/material";
 
-const handleCreate = () => {
-  console.log("create");
-};
 const Home = () => {
-  const { dati, isPending, error } = useFetch(
+  const { dati, isPending, error, cambiando, cazzo } = useFetch(
     "http://tarateo.altervista.org/biagiometro/api/presenze/read.php"
   );
 
@@ -27,6 +24,8 @@ const Home = () => {
           >
             {"Timbrature"}
           </Typography>
+
+          <Typography variant="h5">{cazzo}</Typography>
           <TabellaTimbrature dati={dati.records} />
         </>
       )}

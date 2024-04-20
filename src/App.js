@@ -4,6 +4,7 @@ import Nav from "./Nav";
 import Home from "./components/Home";
 import Aggiungi from "./components/Aggiungi";
 import About from "./components/About";
+import Modifica from "./components/Modifica";
 
 import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
@@ -26,6 +27,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/aggiungi" element={<Aggiungi />} />
+            <Route path="/modifica" element={<Modifica />} />
             <Route path="/about" element={<About />} />
             {/* <Route path="/timbratura/:id" element={<DettaglioTimbratura />} /> */}
           </Routes>

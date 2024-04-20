@@ -56,6 +56,10 @@ const Aggiungi = () => {
     });
   };
 
+  const handleAnnulla = () => {
+    navigate("/");
+  };
+
   return (
     <>
       <Typography
@@ -114,17 +118,44 @@ const Aggiungi = () => {
               <MenuItem key="1" value={"Entrata"}>
                 Entrata
               </MenuItem>
-              <MenuItem key="2" value={"Uscita"}>
+
+              <MenuItem key="2" value={"Uscita Pranzo"}>
+                Uscita Pranzo
+              </MenuItem>
+
+              <MenuItem key="3" value={"Rientro Pranzo"}>
+                Rientro Pranzo
+              </MenuItem>
+
+              <MenuItem key="4" value={"Rientro Pranzo"}>
+                Rientro Pranzo
+              </MenuItem>
+
+              <MenuItem key="5" value={"Uscita"}>
                 Uscita
               </MenuItem>
-              <MenuItem key="3" value={"Entrata Missione"}>
-                Entara Missione
+
+              <MenuItem key="6" value={"Uscita Missione"}>
+                Uscita Missione
+              </MenuItem>
+
+              <MenuItem key="7" value={"Rientro Missione"}>
+                Rientro Missione
               </MenuItem>
             </Select>
             {!isPending && (
-              <Button variant="contained" color="success" type="submit">
-                CONFERMA
-              </Button>
+              <>
+                <Button
+                  variant="outlined"
+                  color="success"
+                  onClick={handleAnnulla}
+                >
+                  ANNULLA
+                </Button>
+                <Button variant="contained" color="success" type="submit">
+                  CONFERMA
+                </Button>
+              </>
             )}
             {isPending && (
               <Typography

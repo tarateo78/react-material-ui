@@ -1,21 +1,21 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import Navbar from "./Navbar";
-import Nav from "./Nav";
-import Home from "./components/Home";
-import Aggiungi from "./components/Aggiungi";
-import About from "./components/About";
-import Modifica from "./components/Modifica";
-
 import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
 import AddBoxIcon from "@mui/icons-material/AddBox";
-// import DettaglioTimbratura from "./DettaglioTimbratura";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Nav from "./components/Nav";
+import Home from "./components/pages/Home";
+import Aggiungi from "./components/pages/Aggiungi";
+import Info from "./components/pages/Info";
+import Modifica from "./components/pages/Modifica";
+import Raggruppati from "./components/pages/Raggruppati.js";
 
 function App() {
   const pages = [
     { name: "Home", pageURL: "/", icon: <HomeIcon /> },
+    { name: "Raggruppati", pageURL: "/raggruppati", icon: <HomeIcon /> },
     { name: "Aggiungi", pageURL: "aggiungi", icon: <AddBoxIcon /> },
-    { name: "About", pageURL: "about", icon: <InfoIcon /> },
+    { name: "Info", pageURL: "info", icon: <InfoIcon /> },
   ];
 
   return (
@@ -28,7 +28,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/aggiungi" element={<Aggiungi />} />
             <Route path="/modifica" element={<Modifica />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/raggruppati" element={<Raggruppati />} />
+            <Route path="/info" element={<Info />} />
             {/* <Route path="/timbratura/:id" element={<DettaglioTimbratura />} /> */}
           </Routes>
         </div>

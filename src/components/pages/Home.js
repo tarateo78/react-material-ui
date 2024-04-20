@@ -4,7 +4,9 @@ import AddIcon from "@mui/icons-material/Add";
 import TabellaTimbrature from "../TabellaTimbrature";
 import useFetch from "../useFetch";
 import { Link } from "react-router-dom";
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+
+import Footer from "../Footer";
 
 const Home = () => {
   const { dati, isPending, error, cambiando, cazzo } = useFetch(
@@ -25,10 +27,12 @@ const Home = () => {
             {"Timbrature"}
           </Typography>
 
-          <Typography variant="h5">{cazzo}</Typography>
           <TabellaTimbrature dati={dati.records} />
         </>
       )}
+      <Box sx={{ textAlign: "center", margin: "15px 0" }}>
+        <Typography>Matteo Tarabini</Typography>
+      </Box>
       {/* {dati && (
         <ListaTimbrature
           dati={dati.records}

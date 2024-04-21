@@ -21,6 +21,8 @@ import { useNavigate } from "react-router-dom";
 
 import DeleteIcon from "@mui/icons-material/Delete";
 
+import NavAnnulla from "../NavAnnulla";
+
 const Modifica = () => {
   const location = useLocation();
   const rifId = location.state;
@@ -30,7 +32,7 @@ const Modifica = () => {
   const [id, setId] = useState(null);
   const [data, setData] = useState(null);
   const [ora, setOra] = useState(null);
-  const [causale, setCausale] = useState(null);
+  const [causale, setCausale] = useState("Entrata");
 
   const timbrata = { id, data, ora, causale };
 
@@ -172,7 +174,7 @@ const Modifica = () => {
               labelId="demo-simple-select-helper-label"
               id="demo-simple-select-helper"
               color="error"
-              defaultValue={"causale"}
+              defaultValue={causale}
               value={causale}
               label="Causale"
               fullWidth

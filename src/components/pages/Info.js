@@ -17,9 +17,9 @@ const Info = () => {
             <li>React.js</li>
             <li>Material UI</li>
           </ul>
-          Codice sorgente disponibile al segunete indirizzo:
-          <br />
+          Codice sorgente:
         </Typography>
+        {"👉🏻 "}
         <a
           href="https://github.com/tarateo78/react-material-ui"
           target="_blank"
@@ -31,6 +31,7 @@ const Info = () => {
         <Typography>
           Le chiamate API Rest sono inviate all'indirizzo:
           <br />
+          {"👉🏻 "}
           <a
             href="https://matteotarabini.altervista.org/api/timbrature/"
             target="_blank"

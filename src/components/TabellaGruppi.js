@@ -1,32 +1,21 @@
 import * as React from "react";
-import { useState } from "react";
 import Table from "@mui/material/Table";
 import IconButton from "@mui/material/IconButton";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
 import EditIcon from "@mui/icons-material/Edit";
 import { Link } from "react-router-dom";
-import FormGroup from "@mui/material/FormGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Switch from "@mui/material/Switch";
 
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { usePickerLayoutProps } from "@mui/x-date-pickers/internals/hooks/usePicker/usePickerLayoutProps";
-import { Bolt } from "@mui/icons-material";
-import { Box } from "@mui/material";
 
 export default function TabellaGruppi({ dati }) {
   // console.log(dati);
-
-  const [isOpen, setIsOpen] = useState(false);
 
   // ITERA TUTTE LE TIMBRATURE E CREA UN ARRAY DI GRUPPI DI TIMBRATURE UGUALI PER DATA
   let raccolta = [];
@@ -46,7 +35,7 @@ export default function TabellaGruppi({ dati }) {
   }
   raccolta.push(gruppo);
 
-  console.log(raccolta);
+  // console.log(raccolta);
 
   let primo = true;
   return (

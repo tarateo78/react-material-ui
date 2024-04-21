@@ -31,7 +31,7 @@ const Raggruppati = () => {
         </>
       )}
       <Footer />
-      <Link to={"aggiungi"}>
+      <Link to={"/aggiungi"}>
         <Fab
           color="primary"
           aria-label="add"

@@ -19,7 +19,7 @@ const Aggiungi = () => {
   const navigate = useNavigate();
 
   let adesso = new Date();
-  // console.log(adesso);
+  const oraAttuale = adesso.getHours() + ":" + adesso.getMinutes();
 
   const [data, setData] = useState(
     adesso.getFullYear() +
@@ -31,7 +31,9 @@ const Aggiungi = () => {
   const [ora, setOra] = useState(
     doppiaCifra(adesso.getHours()) + ":" + doppiaCifra(adesso.getMinutes())
   );
+
   const [causale, setCausale] = useState("Entrata");
+
   const [isPending, setIsPending] = useState(false);
 
   const hanleSubmit = (e) => {
@@ -106,7 +108,7 @@ const Aggiungi = () => {
               labelId="demo-simple-select-helper-label"
               id="demo-simple-select-helper"
               color="error"
-              value={"Entrata"}
+              value={causale}
               label="Causale"
               fullWidth
               onChange={(e) => {

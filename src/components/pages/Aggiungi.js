@@ -19,7 +19,6 @@ const Aggiungi = () => {
   const navigate = useNavigate();
 
   let adesso = new Date();
-  const oraAttuale = adesso.getHours() + ":" + adesso.getMinutes();
 
   const [data, setData] = useState(
     adesso.getFullYear() +
@@ -108,6 +107,7 @@ const Aggiungi = () => {
               labelId="demo-simple-select-helper-label"
               id="demo-simple-select-helper"
               color="error"
+              defaultValue={"Entrata"}
               value={causale}
               label="Causale"
               fullWidth
@@ -129,19 +129,15 @@ const Aggiungi = () => {
                 Rientro Pranzo
               </MenuItem>
 
-              <MenuItem key="4" value={"Rientro Pranzo"}>
-                Rientro Pranzo
-              </MenuItem>
-
-              <MenuItem key="5" value={"Uscita"}>
+              <MenuItem key="4" value={"Uscita"}>
                 Uscita
               </MenuItem>
 
-              <MenuItem key="6" value={"Uscita Missione"}>
+              <MenuItem key="5" value={"Uscita Missione"}>
                 Uscita Missione
               </MenuItem>
 
-              <MenuItem key="7" value={"Rientro Missione"}>
+              <MenuItem key="6" value={"Rientro Missione"}>
                 Rientro Missione
               </MenuItem>
             </Select>

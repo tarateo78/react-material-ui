@@ -172,6 +172,7 @@ const Modifica = () => {
               labelId="demo-simple-select-helper-label"
               id="demo-simple-select-helper"
               color="error"
+              defaultValue={"causale"}
               value={causale}
               label="Causale"
               fullWidth
@@ -184,16 +185,28 @@ const Modifica = () => {
               <MenuItem key="1" value={"Entrata"}>
                 Entrata
               </MenuItem>
-              <MenuItem key="2" value={"Uscita"}>
+
+              <MenuItem key="2" value={"Uscita Pranzo"}>
+                Uscita Pranzo
+              </MenuItem>
+
+              <MenuItem key="3" value={"Rientro Pranzo"}>
+                Rientro Pranzo
+              </MenuItem>
+
+              <MenuItem key="4" value={"Uscita"}>
                 Uscita
               </MenuItem>
-              <MenuItem key="3" value={"Uscita Missione"}>
+
+              <MenuItem key="5" value={"Uscita Missione"}>
                 Uscita Missione
               </MenuItem>
-              <MenuItem key="4" value={"Uscita Assemblea"}>
-                Uscita Assemblea
+
+              <MenuItem key="6" value={"Rientro Missione"}>
+                Rientro Missione
               </MenuItem>
             </Select>
+
             {!staAggiornando && (
               <>
                 <Button

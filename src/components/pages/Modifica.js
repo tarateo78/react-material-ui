@@ -37,7 +37,7 @@ const Modifica = () => {
   const [staAggiornando, setStaAggiornando] = useState(false);
 
   const { dati, isPending, error } = useFetch(
-    "http://tarateo.altervista.org/biagiometro/api/presenze/read.php?id=" +
+    "https://matteotarabini.altervista.org/api/timbrature/presenze/read.php?id=" +
       rifId
   );
 
@@ -54,7 +54,7 @@ const Modifica = () => {
   const handleDeleteItem = () => {
     setOpen(false);
     fetch(
-      "https://tarateo.altervista.org/biagiometro/api/presenze/delete.php",
+      "https://matteotarabini.altervista.org/api/timbrature/presenze/delete.php",
       {
         method: "POST",
         header: { "content-type": "application/json" },
@@ -78,7 +78,7 @@ const Modifica = () => {
     // setIsPending(true);
 
     fetch(
-      "https://tarateo.altervista.org/biagiometro/api/presenze/update.php",
+      "https://matteotarabini.altervista.org/api/timbrature/presenze/update.php",
       {
         method: "POST",
         header: { "content-type": "application/json" },

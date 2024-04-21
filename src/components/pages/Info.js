@@ -32,11 +32,11 @@ const Info = () => {
           Le chiamate API Rest sono inviate all'indirizzo:
           <br />
           <a
-            href="http://matteotarabini.altervista.org/api/presenze/"
+            href="https://matteotarabini.altervista.org/api/timbrature/"
             target="_blank"
             rel="noreferrer"
           >
-            http://matteotarabini.altervista.org/api/presenze/
+            https://matteotarabini.altervista.org/api/timbrature/
           </a>
         </Typography>
       </Box>

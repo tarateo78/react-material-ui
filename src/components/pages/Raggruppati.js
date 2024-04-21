@@ -10,7 +10,7 @@ import Footer from "../Footer";
 
 const Raggruppati = () => {
   const { dati, isPending, error } = useFetch(
-    "http://tarateo.altervista.org/biagiometro/api/presenze/read.php"
+    "https://matteotarabini.altervista.org/api/timbrature/presenze/read.php"
   );
 
   return (

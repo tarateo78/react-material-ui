@@ -45,7 +45,7 @@ const Aggiungi = () => {
     setIsPending(true);
 
     fetch(
-      "https://tarateo.altervista.org/biagiometro/api/presenze/create.php",
+      "https://matteotarabini.altervista.org/api/timbrature/presenze/create.php",
       {
         method: "POST",
         header: { "content-type": "application/json" },

@@ -5,16 +5,18 @@ import TabellaTimbrature from "../TabellaTimbrature";
 import useFetch from "../useFetch";
 import { Link } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
+import Nav from "../Nav";
 
 import Footer from "../Footer";
 
-const Home = () => {
+const Home = ({ pages }) => {
   const { dati, isPending, error, cambiando, cazzo } = useFetch(
     "https://matteotarabini.altervista.org/api/timbrature/presenze/read.php"
   );
 
   return (
     <div className="home">
+      <Nav pages={pages} />
       {error && <div>{error}</div>}
       {isPending && <div>Loading...</div>}
       {dati && (

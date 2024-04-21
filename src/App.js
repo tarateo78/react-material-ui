@@ -15,8 +15,8 @@ function App() {
   const pages = [
     { name: "Home", pageURL: "/", icon: <HomeIcon /> },
     { name: "Raggruppati", pageURL: "/raggruppati", icon: <HomeIcon /> },
-    { name: "Aggiungi", pageURL: "aggiungi", icon: <AddBoxIcon /> },
-    { name: "Info", pageURL: "info", icon: <InfoIcon /> },
+    { name: "Aggiungi", pageURL: "/aggiungi", icon: <AddBoxIcon /> },
+    { name: "Info", pageURL: "/info", icon: <InfoIcon /> },
   ];
 
   return (
@@ -26,15 +26,16 @@ function App() {
           maxWidth="sm"
           sx={{ backgroundColor: "white", padding: "30px 0" }}
         >
-          <Nav pages={pages} />
-
           <div className="content">
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/aggiungi" element={<Aggiungi />} />
-              <Route path="/modifica" element={<Modifica />} />
-              <Route path="/raggruppati" element={<Raggruppati />} />
-              <Route path="/info" element={<Info />} />
+              <Route path="/" element={<Home pages={pages} />} />
+              <Route path="/aggiungi" element={<Aggiungi pages={pages} />} />
+              <Route path="/modifica" element={<Modifica pages={pages} />} />
+              <Route
+                path="/raggruppati"
+                element={<Raggruppati pages={pages} />}
+              />
+              <Route path="/info" element={<Info pages={pages} />} />
               {/* <Route path="/timbratura/:id" element={<DettaglioTimbratura />} /> */}
             </Routes>
           </div>

@@ -11,11 +11,14 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import NavAnnulla from "../NavAnnulla";
+import Nav from "../Nav";
+
 const doppiaCifra = (n) => {
   return n < 10 ? "0" + n.toString() : n.toString();
 };
 
-const Aggiungi = () => {
+const Aggiungi = ({ pages }) => {
   const navigate = useNavigate();
 
   let adesso = new Date();
@@ -63,6 +66,20 @@ const Aggiungi = () => {
 
   return (
     <>
+      <Box
+        sx={{
+          display: { xs: "flex", md: "none" },
+        }}
+      >
+        <NavAnnulla />
+      </Box>
+      <Box
+        sx={{
+          display: { xs: "none", md: "flex" },
+        }}
+      >
+        <Nav pages={pages} />
+      </Box>
       <Typography
         variant="h5"
         align="center"
@@ -144,6 +161,9 @@ const Aggiungi = () => {
             {!isPending && (
               <>
                 <Button
+                  sx={{
+                    display: { xs: "none", md: "inline" },
+                  }}
                   variant="outlined"
                   color="success"
                   onClick={handleAnnulla}

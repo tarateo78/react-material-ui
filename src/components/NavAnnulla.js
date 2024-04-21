@@ -10,6 +10,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import AvTimerIcon from "@mui/icons-material/AvTimer";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 import TemporaryDrawer from "../components/MenuDrawer";
 
@@ -27,15 +28,16 @@ const Nav = (prop) => {
               display: { xs: "flex", md: "none" },
             }}
           >
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="logo"
-              sx={{ display: { xs: "none", md: "flex" } }}
-            >
-              <AvTimerIcon />
-            </IconButton>
+            <Link to="/">
+              <IconButton
+                size="large"
+                edge="start"
+                aria-label="back"
+                sx={{ color: "white" }}
+              >
+                <ArrowBackIcon />
+              </IconButton>
+            </Link>
           </Box>
         </Toolbar>
       </AppBar>

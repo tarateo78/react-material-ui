@@ -22,8 +22,9 @@ import { useNavigate } from "react-router-dom";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 import NavAnnulla from "../NavAnnulla";
+import Nav from "../Nav";
 
-const Modifica = () => {
+const Modifica = ({ pages }) => {
   const location = useLocation();
   const rifId = location.state;
 
@@ -103,6 +104,20 @@ const Modifica = () => {
 
   return (
     <>
+      <Box
+        sx={{
+          display: { xs: "flex", md: "none" },
+        }}
+      >
+        <NavAnnulla />
+      </Box>
+      <Box
+        sx={{
+          display: { xs: "none", md: "flex" },
+        }}
+      >
+        <Nav pages={pages} />
+      </Box>
       <Typography
         variant="h5"
         align="center"
@@ -128,7 +143,7 @@ const Modifica = () => {
           </DialogTitle>
           <DialogContent>
             <DialogContentText id="alert-dialog-description">
-              La cancellazione dellla timbratura è irreversibile.
+              La cancellazione della timbratura è irreversibile.
             </DialogContentText>
           </DialogContent>
           <DialogActions>
@@ -212,6 +227,9 @@ const Modifica = () => {
             {!staAggiornando && (
               <>
                 <Button
+                  sx={{
+                    display: { xs: "none", md: "inline" },
+                  }}
                   variant="outlined"
                   color="success"
                   onClick={handleAnnulla}

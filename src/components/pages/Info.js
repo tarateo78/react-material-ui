@@ -1,8 +1,10 @@
 import { Box, Divider, Typography } from "@mui/material";
+import Nav from "../Nav";
 
-const Info = () => {
+const Info = ({ pages }) => {
   return (
     <>
+      <Nav pages={pages} />
       <Typography
         variant="h5"
         align="center"
@@ -10,7 +12,9 @@ const Info = () => {
       >
         {"Info"}
       </Typography>
-      <Box marginLeft={2} marginRight={2}>
+
+      <Box marginLeft={2} marginRight={2} marginTop={5}>
+        <Divider sx={{ margin: "40px 0" }} />
         <Typography>
           Applicazione web realizzata con:
           <ul>
@@ -27,7 +31,7 @@ const Info = () => {
         >
           https://github.com/tarateo78/react-material-ui
         </a>
-        <Divider sx={{ margin: "20px 0" }} />
+        <Divider sx={{ margin: "40px 0" }} />
         <Typography>
           Le chiamate API Rest sono inviate all'indirizzo:
           <br />
@@ -40,6 +44,7 @@ const Info = () => {
             https://matteotarabini.altervista.org/api/timbrature/
           </a>
         </Typography>
+        <Divider sx={{ margin: "40px 0" }} />
       </Box>
     </>
   );

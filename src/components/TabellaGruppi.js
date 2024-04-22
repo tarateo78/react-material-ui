@@ -41,7 +41,7 @@ export default function TabellaGruppi({ dati }) {
   return (
     <>
       {raccolta.map((gruppo) => (
-        <Accordion key={Math.random()} defaultExpanded={primo}>
+        <Accordion key={gruppo[0].data} defaultExpanded={primo}>
           {(primo = false)}
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
@@ -57,6 +57,7 @@ export default function TabellaGruppi({ dati }) {
                 <TableBody>
                   {gruppo.map((obj) => (
                     <TableRow
+                      key={obj.id}
                       sx={{
                         "&:last-child td, &:last-child th": { border: 0 },
                         "&:nth-of-type(even)": {

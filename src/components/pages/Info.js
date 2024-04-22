@@ -15,14 +15,12 @@ const Info = ({ pages }) => {
 
       <Box marginLeft={2} marginRight={2} marginTop={5}>
         <Divider sx={{ margin: "40px 0" }} />
-        <Typography>
-          Applicazione web realizzata con:
-          <ul>
-            <li>React.js</li>
-            <li>Material UI</li>
-          </ul>
-          Codice sorgente:
-        </Typography>
+        Applicazione web realizzata con:
+        <ul>
+          <li>React.js</li>
+          <li>Material UI</li>
+        </ul>
+        Codice sorgente:
         {"👉🏻 "}
         <a
           href="https://github.com/tarateo78/react-material-ui"

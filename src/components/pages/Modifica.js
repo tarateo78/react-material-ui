@@ -31,8 +31,8 @@ const Modifica = ({ pages }) => {
   const navigate = useNavigate();
 
   const [id, setId] = useState(null);
-  const [data, setData] = useState(null);
-  const [ora, setOra] = useState(null);
+  const [data, setData] = useState(undefined);
+  const [ora, setOra] = useState(undefined);
   const [causale, setCausale] = useState("Entrata");
 
   const timbrata = { id, data, ora, causale };
@@ -127,7 +127,7 @@ const Modifica = ({ pages }) => {
         {"Modifica timbratura"}
       </Typography>
       <Box marginLeft={4} marginRight={4}>
-        <Box fullWidth sx={{ textAlign: "right" }}>
+        <Box sx={{ textAlign: "right" }}>
           <IconButton size="small" onClick={handleClickOpenDialog}>
             <DeleteIcon color="warning" />
           </IconButton>
@@ -242,12 +242,7 @@ const Modifica = ({ pages }) => {
               </>
             )}
             {staAggiornando && (
-              <Typography
-                variant="h5"
-                fullWidth
-                align="center"
-                sx={{ color: "gray" }}
-              >
+              <Typography variant="h5" align="center" sx={{ color: "gray" }}>
                 Salvataggio in corso...
               </Typography>
             )}

@@ -10,25 +10,44 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import AvTimerIcon from "@mui/icons-material/AvTimer";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 import TemporaryDrawer from "../components/MenuDrawer";
 
 // const pagine = { home: "Home", about: "About", login: "Login" };
 
-const Nav = (prop) => {
-  const pages = prop.pages;
+const Nav = ({ pages, deleteId }) => {
+  // MENU PER MOBILE (XS) ==============================================
 
-  return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed">
-        <Toolbar>
-          <Box
-            sx={{
-              display: { xs: "flex", md: "none" },
-            }}
-          >
-            <TemporaryDrawer pages={pages} />
-          </Box>
+  const Mobile = () => {
+    return (
+      <>
+        <Toolbar sx={{ display: { xs: "flex", md: "none" } }}>
+          <TemporaryDrawer pages={pages} />
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            Biagiometro App
+          </Typography>
+          {deleteId && (
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="logo"
+            >
+              <DeleteIcon />
+            </IconButton>
+          )}
+        </Toolbar>
+      </>
+    );
+  };
+
+  // MENU PER DESKTOP ==================================================
+
+  const Desktop = () => {
+    return (
+      <>
+        <Toolbar sx={{ display: { xs: "none", md: "flex" } }}>
           <IconButton
             size="large"
             edge="start"
@@ -41,24 +60,25 @@ const Nav = (prop) => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Biagiometro App
           </Typography>
-
-          <Box
-            sx={{
-              display: { xs: "none", md: "flex" },
-            }}
-          >
-            {pages.map((page) => (
-              <Link
-                key={page.name}
-                to={page.pageURL}
-                style={{ textDecoration: "none", color: "white" }}
-              >
-                <MenuItem>{page.name}</MenuItem>
-              </Link>
-            ))}
-          </Box>
-          <Button color="inherit">Login</Button>
+          {pages.map((page) => (
+            <Link
+              key={page.name}
+              to={page.pageURL}
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              <MenuItem>{page.name}</MenuItem>
+            </Link>
+          ))}
         </Toolbar>
+      </>
+    );
+  };
+
+  return (
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="fixed">
+        <Mobile />
+        <Desktop />
       </AppBar>
     </Box>
   );

@@ -20,7 +20,10 @@ const Info = ({ pages }) => {
           <li>React.js</li>
           <li>Material UI</li>
         </ul>
+        <Divider sx={{ margin: "40px 0" }} />
         Codice sorgente:
+        <br />
+        <br />
         {"👉🏻 "}
         <a
           href="https://github.com/tarateo78/react-material-ui"
@@ -32,6 +35,7 @@ const Info = ({ pages }) => {
         <Divider sx={{ margin: "40px 0" }} />
         <Typography>
           Le chiamate API Rest sono inviate all'indirizzo:
+          <br />
           <br />
           {"👉🏻 "}
           <a

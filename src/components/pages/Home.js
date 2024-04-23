@@ -5,18 +5,30 @@ import TabellaTimbrature from "../TabellaTimbrature";
 import useFetch from "../useFetch";
 import { Link } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Switch from "@mui/material/Switch";
+
 import Nav from "../Nav";
+import TabellaGruppi from "../TabellaGruppi";
 
 import Footer from "../Footer";
+import { useState } from "react";
 
 const Home = ({ pages }) => {
   const { dati, isPending, error, cambiando, cazzo } = useFetch(
     "https://matteotarabini.altervista.org/api/timbrature/presenze/read.php"
   );
 
+  const [isGruppo, setIsGruppo] = useState(true);
+
+  const handleGruppo = () => {
+    setIsGruppo(!isGruppo);
+  };
+
   return (
     <div className="home">
       <Nav pages={pages} />
+
       {error && <div>{error}</div>}
       {isPending && <div>Loading...</div>}
       {dati && (
@@ -28,8 +40,15 @@ const Home = ({ pages }) => {
           >
             {"Timbrature"}
           </Typography>
+          <Box sx={{ width: "100%", textAlign: "right" }}>
+            <FormControlLabel
+              control={<Switch checked={isGruppo} onChange={handleGruppo} />}
+              label="Raggruppato"
+            />
+          </Box>
 
-          <TabellaTimbrature dati={dati.records} />
+          {isGruppo && <TabellaGruppi dati={dati.records} />}
+          {!isGruppo && <TabellaTimbrature dati={dati.records} />}
         </>
       )}
       <Box sx={{ textAlign: "center", margin: "15px 0" }}>

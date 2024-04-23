@@ -99,7 +99,7 @@ const Aggiungi = ({ pages }) => {
               variant="outlined"
               margin="normal"
               fullWidth
-              defaultValue={data}
+              value={data}
               onChange={(e) => {
                 setData(e.target.value);
               }}
@@ -113,7 +113,7 @@ const Aggiungi = ({ pages }) => {
               variant="outlined"
               margin="normal"
               fullWidth
-              defaultValue={ora}
+              value={ora}
               onChange={(e) => {
                 setOra(e.target.value);
               }}
@@ -124,7 +124,6 @@ const Aggiungi = ({ pages }) => {
               labelId="demo-simple-select-helper-label"
               id="demo-simple-select-helper"
               color="error"
-              defaultValue={"Entrata"}
               value={causale}
               label="Causale"
               fullWidth
@@ -176,12 +175,7 @@ const Aggiungi = ({ pages }) => {
               </>
             )}
             {isPending && (
-              <Typography
-                variant="h5"
-                fullWidth
-                align="center"
-                sx={{ color: "gray" }}
-              >
+              <Typography variant="h5" align="center" sx={{ color: "gray" }}>
                 Salvataggio in corso...
               </Typography>
             )}
